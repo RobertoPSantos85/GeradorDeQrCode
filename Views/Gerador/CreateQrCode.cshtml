@@ -10,12 +10,22 @@
 <div class="conteiner">
     <div class="row">
         <form asp-action="CreateQrCode" asp-controller="Gerador" method="post">
+            <div class="mb-3">
+                <label class="form-label">Digite o valor para o QrCode</label>
+                <input type="text" class="form-control" id="produtoNome" name="produtoNome" />
+            </div>
+            <div>
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary">Gerar QrCode</button>
+                </div>
+            </div>
 
+            @if (ViewBag.QrCodeImage != null)
+            {
+                <img src="@ViewBag.QrCodeImage" alt="" style="height:200px; width:200px" />
+            }
         </form>
 
-        @if (ViewBag.QrCodeImage != null)
-        {
-            <img src="@ViewBag.QrCodeImage" alt=" " style="height:200px; width:200px" />
-        }
+       
     </div>
 </div>

@@ -14,7 +14,13 @@ namespace GeradorDeQrCode.Controllers
 
         public IActionResult CreateQrCode()
         {
-            var produtoNome = "Arroz";
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult CreateQrCode(string produtoNome)
+        {
+           
             using(MemoryStream stream = new MemoryStream())
             {
                 QRCodeGenerator qrGenerator = new QRCodeGenerator();
