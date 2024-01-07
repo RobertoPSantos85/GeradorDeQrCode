@@ -24,7 +24,7 @@ namespace GeradorDeQrCode.Controllers
                 using(Bitmap codeBitmap = qrCode.GetGraphic(20))
                 {
                     codeBitmap.Save(stream, ImageFormat.Png);
-                    ViewBag.QrCodeImage = "data:image/png;base64" + Convert.ToBase64String(stream.ToArray());
+                    ViewBag.QrCodeImage = "data:image/png;base64," + Convert.ToBase64String(stream.ToArray());
                 }
             }
             return View();
